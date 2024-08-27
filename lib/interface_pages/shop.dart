@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vape_zone/components/container.dart';
 import 'package:vape_zone/components/text.dart';
 import 'package:vape_zone/components/textfield.dart';
 
@@ -46,6 +47,19 @@ class _ShopPageState extends State<ShopPage> {
                   fontWeight: FontWeight.normal,
                   color: Theme.of(context).colorScheme.onPrimary,
                 ),
+              ),
+            ),
+            Expanded(
+              child: ListView(
+                shrinkWrap: true,
+                children: const [
+                  MyContainer(image: 'assets/images/vape 1.jpg'),
+                  MyContainer(image: 'assets/images/vape 1.jpg'),
+                  MyContainer(image: 'assets/images/vape 1.jpg'),
+                  MyContainer(image: 'assets/images/vape 1.jpg'),
+                  MyContainer(image: 'assets/images/vape 1.jpg'),
+                  MyContainer(image: 'assets/images/vape 1.jpg'),
+                ],
               ),
             )
           ],

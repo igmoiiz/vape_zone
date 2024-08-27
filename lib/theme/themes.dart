@@ -23,7 +23,7 @@ ThemeData darkMode = ThemeData(
   ),
   colorScheme: ColorScheme.dark(
     surface: Color(0xFF13131A),
-    primary: Colors.grey.shade800,
+    primary: Colors.grey.shade900,
     secondary: Color(0xFFfafaf4),
     onPrimary: Colors.yellow,
   ),
