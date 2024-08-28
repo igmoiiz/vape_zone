@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
 import 'package:vape_zone/components/container.dart';
 import 'package:vape_zone/components/text.dart';
 import 'package:vape_zone/components/textfield.dart';
@@ -99,14 +98,9 @@ class _ShopPageState extends State<ShopPage> {
                     crossAxisCount: 2),
                 itemBuilder: (context, index) => CustomCard(
                   onTap: () {
-                    // Navigator.of(context).push(MaterialPageRoute(
-                    //   builder: (context) => const ProductListPage(),
-                    // ));
-                    Get.to(
-                      () => const ProductListPage(),
-                      transition: Transition.circularReveal,
-                      duration: const Duration(milliseconds: 1000),
-                    );
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const ProductListPage(),
+                    ));
                   },
                   backgroundImage: customCardDetails[index][0],
                   title: customCardDetails[index][1],
