@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:vape_zone/interface_pages/home.dart';
 import 'package:vape_zone/theme/themes.dart';
+
+import 'Interface/home.dart';
 
 void main() {
   runApp(const MainApp());

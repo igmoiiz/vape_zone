@@ -49,7 +49,7 @@ class IntroPage extends StatelessWidget {
                           Padding(
                             padding: EdgeInsets.symmetric(
                                 horizontal:
-                                    MediaQuery.of(context).size.width * 0.12),
+                                    MediaQuery.of(context).size.width * 0.10),
                             child: Text(
                               'Elevate Your Cloud Game...',
                               style: TextStyle(

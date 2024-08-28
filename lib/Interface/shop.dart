@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:vape_zone/Interface/product_list.dart';
 import 'package:vape_zone/components/container.dart';
 import 'package:vape_zone/components/text.dart';
 import 'package:vape_zone/components/textfield.dart';
-import 'package:vape_zone/interface_pages/product_list.dart';
 import '../components/drawer.dart';
 
 class ShopPage extends StatefulWidget {

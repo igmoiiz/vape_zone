@@ -8,10 +8,10 @@ ThemeData lightMode = ThemeData(
     ThemeData.light().textTheme,
   ),
   colorScheme: ColorScheme.light(
-    surface: Color(0xFFfafaf4),
+    surface: const Color(0xFFfafaf4),
     primary: Colors.grey.shade500,
-    secondary: Color(0xFF13131A),
-    onPrimary: Color(0xFFff0000),
+    secondary: const Color(0xFF13131A),
+    onPrimary: const Color(0xFFff0000),
   ),
 );
 
@@ -22,9 +22,9 @@ ThemeData darkMode = ThemeData(
     ThemeData.light().textTheme,
   ),
   colorScheme: ColorScheme.dark(
-    surface: Color(0xFF13131A),
+    surface: const Color(0xFF13131A),
     primary: Colors.grey.shade900,
-    secondary: Color(0xFFfafaf4),
+    secondary: const Color(0xFFfafaf4),
     onPrimary: Colors.yellow,
   ),
 );
