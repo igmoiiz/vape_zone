@@ -10,6 +10,8 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: LiquidSwipe(
+        enableLoop: false,
+        initialPage: 0,
         pages: const [
           IntroPage(),
           ShopPage(),

@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  get: ^4.6.6
   google_fonts: ^6.2.1
   liquid_swipe: ^3.1.0
   lottie: ^3.1.2
@@ -24,3 +25,9 @@ flutter:
   assets:
     - assets/animations/Smoke Anim.json
     - assets/images/vape 1.jpg
+    - assets/images/accessories.jpeg
+    - assets/images/coils.jpeg
+    - assets/images/disposable.jpeg
+    - assets/images/juices.jpeg
+    - assets/images/pods.jpeg
+    - assets/images/vapes.jpeg
