@@ -1,17 +1,22 @@
 import 'package:flutter/material.dart';
 
-class MyTextfield extends StatelessWidget {
+class MyTextfield extends StatefulWidget {
   final TextEditingController controller;
   final String text;
   final FocusNode? focusNode;
 
   const MyTextfield({
-    Key? key,
+    super.key,
     required this.controller,
     required this.text,
     this.focusNode,
-  }) : super(key: key);
+  });
 
+  @override
+  State<MyTextfield> createState() => _MyTextfieldState();
+}
+
+class _MyTextfieldState extends State<MyTextfield> {
   @override
   Widget build(BuildContext context) {
     final onPrimaryColor = Theme.of(context).colorScheme.onPrimary;
@@ -19,15 +24,18 @@ class MyTextfield extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 18.0),
       child: TextField(
-        controller: controller,
-        focusNode: focusNode,
+        onChanged: (value) {
+          setState(() {});
+        },
+        controller: widget.controller,
+        focusNode: widget.focusNode,
         cursorColor: onPrimaryColor, // Set cursor color
         decoration: InputDecoration(
           suffixIcon: Icon(
             Icons.search,
             color: Theme.of(context).colorScheme.onPrimary,
           ),
-          labelText: text,
+          labelText: widget.text,
           labelStyle: TextStyle(
               color: Theme.of(context).colorScheme.secondary), // Label color
           border: const OutlineInputBorder(),

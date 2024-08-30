@@ -96,15 +96,19 @@ class _ShopPageState extends State<ShopPage> {
                 itemCount: customCardDetails.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2),
-                itemBuilder: (context, index) => CustomCard(
-                  onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const ProductListPage(),
-                    ));
-                  },
-                  backgroundImage: customCardDetails[index][0],
-                  title: customCardDetails[index][1],
-                ),
+                itemBuilder: (context, index) {
+                  return CustomCard(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => ProductListPage(
+                          collectionName: customCardDetails[index][1],
+                        ),
+                      ));
+                    },
+                    backgroundImage: customCardDetails[index][0],
+                    title: customCardDetails[index][1],
+                  );
+                },
               ),
             ),
           ],

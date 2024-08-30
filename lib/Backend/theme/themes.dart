@@ -12,6 +12,7 @@ ThemeData lightMode = ThemeData(
     primary: Colors.grey.shade500,
     secondary: const Color(0xFF13131A),
     onPrimary: const Color(0xFFff0000),
+    inversePrimary: Colors.yellow,
   ),
 );
 
@@ -26,5 +27,6 @@ ThemeData darkMode = ThemeData(
     primary: Colors.grey.shade900,
     secondary: const Color(0xFFfafaf4),
     onPrimary: Colors.yellow,
+    inversePrimary: const Color(0xFFff0000),
   ),
 );

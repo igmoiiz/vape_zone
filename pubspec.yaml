@@ -7,11 +7,21 @@ environment:
   sdk: '>=3.4.4 <4.0.0'
 
 dependencies:
+  cached_network_image: ^3.4.1
+  cloud_firestore: ^4.14.0
+  firebase_auth: ^4.16.0
+  firebase_core: ^2.24.2
+  firebase_storage: ^11.6.0
+  flexify: ^2.1.1
   flutter:
     sdk: flutter
+  fluttertoast: ^8.2.8
   google_fonts: ^6.2.1
+  image_picker: ^1.1.2
   liquid_swipe: ^3.1.0
   lottie: ^3.1.2
+  persistent_shopping_cart: ^0.0.7
+  provider: ^6.1.2
 
 dev_dependencies:
   flutter_test:
