@@ -1,3 +1,4 @@
+import 'package:flexify/flexify.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_shopping_cart/persistent_shopping_cart.dart';
 import 'package:provider/provider.dart';
@@ -56,7 +57,7 @@ class _CartPageState extends State<CartPage> {
                                   Text(
                                     'Total:',
                                     style: TextStyle(
-                                      fontSize: 20,
+                                      fontSize: 20.rt,
                                       fontWeight: FontWeight.bold,
                                       color: Theme.of(context)
                                           .colorScheme
@@ -66,7 +67,7 @@ class _CartPageState extends State<CartPage> {
                                   Text(
                                     totalAmount.toString(),
                                     style: TextStyle(
-                                      fontSize: 20,
+                                      fontSize: 20.rt,
                                       color: Theme.of(context)
                                           .colorScheme
                                           .onPrimary,

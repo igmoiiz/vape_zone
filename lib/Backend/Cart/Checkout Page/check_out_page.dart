@@ -1,3 +1,4 @@
+import 'package:flexify/flexify.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:vape_zone/Backend/Provider/Services/checkout_services.dart';
@@ -27,10 +28,10 @@ class CheckOutPage extends StatelessWidget {
               'I\'m not a coil, but I\'m still into you...',
               style: TextStyle(
                 color: Theme.of(context).colorScheme.onPrimary,
-                fontSize: 36,
+                fontSize: MediaQuery.of(context).size.height * 0.038.rt,
               ),
             ),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+            30.verticalSpace,
             Form(
               key: checkoutServices.formKey,
               child: Column(
@@ -59,7 +60,7 @@ class CheckOutPage extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+            20.verticalSpace,
             MyButton(
               buttontext: 'Place Order',
               onTap: () {
@@ -71,7 +72,7 @@ class CheckOutPage extends StatelessWidget {
               },
               loading: checkoutServices.loading,
             ),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.01),
+            10.verticalSpace,
             Align(
               alignment: Alignment.bottomCenter,
               child: Text(

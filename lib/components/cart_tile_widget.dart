@@ -1,5 +1,6 @@
-// ignore_for_file: use_build_context_synchronously
+// ignore_for_file: use_build_context_synchronously, deprecated_member_use
 
+import 'package:flexify/flexify.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_shopping_cart/model/cart_model.dart';
 import 'package:persistent_shopping_cart/persistent_shopping_cart.dart';
@@ -26,11 +27,11 @@ class CartTileWidget extends StatelessWidget {
         children: [
           NetworkImageWidget(
             borderRadius: 10,
-            height: 80,
-            width: 80,
+            height: 80.rh,
+            width: 80.rw,
             imageUrl: data.productThumbnail ?? '',
           ),
-          const SizedBox(width: 10),
+          10.horizontalSpace,
           Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -39,7 +40,7 @@ class CartTileWidget extends StatelessWidget {
                 Text(
                   data.productName,
                   style: TextStyle(
-                      fontSize: 14,
+                      fontSize: 14.rt,
                       fontWeight: FontWeight.w700,
                       color: Theme.of(context).colorScheme.surface),
                 ),
@@ -60,7 +61,7 @@ class CartTileWidget extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const SizedBox(width: 20),
+                    20.horizontalSpace,
                     GestureDetector(
                       onTap: () async {
                         bool removed =
@@ -73,8 +74,8 @@ class CartTileWidget extends StatelessWidget {
                         }
                       },
                       child: Container(
-                        height: 30,
-                        width: 70,
+                        height: 30.rh,
+                        width: 70.rw,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           border: Border.all(
@@ -141,9 +142,12 @@ class CartTileWidget extends StatelessWidget {
         removed
             ? 'Product removed from cart.'
             : 'Product not found in the cart.',
+        style: const TextStyle(
+          color: Colors.black,
+        ),
       ),
-      backgroundColor: removed ? Colors.green : Colors.red,
-      duration: const Duration(seconds: 1),
+      backgroundColor: removed ? Colors.yellow : Colors.red,
+      duration: const Duration(seconds: 2),
     );
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }

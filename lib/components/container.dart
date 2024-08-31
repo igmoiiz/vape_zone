@@ -1,3 +1,4 @@
+import 'package:flexify/flexify.dart';
 import 'package:flutter/material.dart';
 
 class CustomCard extends StatelessWidget {
@@ -19,7 +20,7 @@ class CustomCard extends StatelessWidget {
       child: GestureDetector(
         onTap: onTap,
         child: Container(
-          height: 200,
+          height: 200.rh,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(4),
             image: DecorationImage(
@@ -44,9 +45,9 @@ class CustomCard extends StatelessWidget {
                   padding: const EdgeInsets.all(8),
                   child: Text(
                     title,
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: Colors.white,
-                      fontSize: 16,
+                      fontSize: 16.rt,
                       fontWeight: FontWeight.bold,
                     ),
                     textAlign: TextAlign.center,

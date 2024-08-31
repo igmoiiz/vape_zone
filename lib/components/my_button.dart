@@ -1,3 +1,6 @@
+// ignore_for_file: deprecated_member_use
+
+import 'package:flexify/flexify.dart';
 import 'package:flutter/material.dart';
 
 /// A custom button widget with a loading indicator.
@@ -41,10 +44,10 @@ class MyButton extends StatelessWidget {
       child: GestureDetector(
         onTap: onTap,
         child: Container(
-          constraints: const BoxConstraints(
-            minWidth: 60,
+          constraints: BoxConstraints(
+            minWidth: 60.rw,
           ),
-          height: 60,
+          height: 60.rh,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(4),
             color: Theme.of(context).colorScheme.onPrimary,
@@ -62,9 +65,10 @@ class MyButton extends StatelessWidget {
                   child: Text(
                   buttontext,
                   style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Theme.of(context).colorScheme.inversePrimary),
+                    fontSize: 16.rt,
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).colorScheme.background,
+                  ),
                 )),
         ),
       ),

@@ -1,3 +1,4 @@
+import 'package:flexify/flexify.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
@@ -28,7 +29,7 @@ class IntroPage extends StatelessWidget {
                             'V\nA\nP\nE\nZ\nO\nN\nE',
                             style: TextStyle(
                               fontWeight: FontWeight.normal,
-                              fontSize: 68,
+                              fontSize: 68.rt,
                               color: Colors.black87,
                               fontFamily:
                                   GoogleFonts.rubikWetPaint().fontFamily,
@@ -43,9 +44,7 @@ class IntroPage extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Lottie.asset('assets/animations/Smoke Anim.json'),
-                          const SizedBox(
-                            height: 30,
-                          ),
+                          30.verticalSpace,
                           Padding(
                             padding: EdgeInsets.symmetric(
                                 horizontal:
@@ -53,7 +52,7 @@ class IntroPage extends StatelessWidget {
                             child: Text(
                               'Elevate Your Cloud Game...',
                               style: TextStyle(
-                                fontSize: 58,
+                                fontSize: 54.rt,
                                 color: Colors.black87,
                                 fontWeight: FontWeight.normal,
                                 fontFamily:
@@ -68,12 +67,12 @@ class IntroPage extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: 16),
-              const Padding(
-                padding: EdgeInsets.all(8.0),
+              16.verticalSpace,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
                 child: MyText(
                   text: 'Swipe Right To Start Vaping...',
-                  fontSize: 22,
+                  fontSize: 22.rt,
                   fontWeight: FontWeight.normal,
                   color: Colors.black87,
                 ),

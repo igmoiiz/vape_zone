@@ -1,10 +1,10 @@
 name: vape_zone
 description: "A new Flutter project."
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
-  sdk: '>=3.4.4 <4.0.0'
+  sdk: ">=3.4.4 <4.0.0"
 
 dependencies:
   cached_network_image: ^3.4.1
@@ -33,10 +33,12 @@ flutter:
 
   assets:
     - assets/animations/Smoke Anim.json
-    - assets/images/vape 1.jpg
     - assets/images/accessories.jpeg
     - assets/images/coils.jpeg
     - assets/images/disposable.jpeg
     - assets/images/juices.jpeg
     - assets/images/pods.jpeg
     - assets/images/vapes.jpeg
+    - assets/animations/Animation - 1725129474665.json
+    - assets/images/used vape.jpeg
+    - assets/images/offers.jpeg
