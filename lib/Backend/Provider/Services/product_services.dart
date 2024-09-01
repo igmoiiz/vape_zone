@@ -18,6 +18,8 @@ class ProductServices extends ChangeNotifier {
     'Disposable Pods',
     'Coils',
     'Accessories',
+    'Offers',
+    'Used Devices',
   ];
 
   //  controllers

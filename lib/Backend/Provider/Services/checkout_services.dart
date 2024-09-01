@@ -45,16 +45,16 @@ class CheckoutServices extends ChangeNotifier {
         'unitPrice': cartItem.unitPrice,
         'quantity': cartItem.quantity,
         'totalPrice': totalPrice,
-        'customerName': customerNameController.text,
-        'customerAddress': customerAddressController.text,
-        'customerEmail': customerEmailController.text,
-        'customerPhone': customerPhoneController.text,
+        'customerName': _customerNameController.text,
+        'customerAddress': _customerAddressController.text,
+        'customerEmail': _customerEmailController.text,
+        'customerPhone': _customerPhoneController.text,
       }).then((value) {
         _loading = false;
-        customerNameController.clear();
-        customerAddressController.clear();
-        customerEmailController.clear();
-        customerPhoneController.clear();
+        _customerNameController.clear();
+        _customerAddressController.clear();
+        _customerEmailController.clear();
+        _customerPhoneController.clear();
         notifyListeners();
         Utils().toastMessage('Order Placed! you will receive a call soon!');
       }).onError((error, stackTrace) {
