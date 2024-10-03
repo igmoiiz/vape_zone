@@ -48,7 +48,7 @@ class NetworkImageWidget extends StatelessWidget {
             height: height,
             decoration: BoxDecoration(
               color: Colors.grey,
-              borderRadius: BorderRadius.circular(13),
+              borderRadius: BorderRadius.circular(8),
             ),
             child: Icon(
               Icons.error_outline,

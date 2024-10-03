@@ -46,6 +46,9 @@ class MyTextFormField extends StatelessWidget {
         decoration: InputDecoration(
           suffix: suffixIcon,
           labelText: labelText,
+          labelStyle: TextStyle(
+            color: Theme.of(context).colorScheme.onPrimary,
+          ),
           filled: true,
           hintStyle: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
           enabledBorder: OutlineInputBorder(

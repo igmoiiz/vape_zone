@@ -1,4 +1,3 @@
-import 'package:flexify/flexify.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -11,7 +10,7 @@ class Utils {
       timeInSecForIosWeb: 1,
       backgroundColor: Colors.yellow,
       textColor: Colors.black,
-      fontSize: 16.0.rt,
+      fontSize: 16.0,
     );
   }
 }

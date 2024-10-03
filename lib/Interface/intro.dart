@@ -1,4 +1,3 @@
-import 'package:flexify/flexify.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
@@ -9,76 +8,74 @@ class IntroPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var mediaQuery = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.onPrimary,
       body: SafeArea(
-        child: SingleChildScrollView(
-          // Added scrolling capability
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    Expanded(
-                      flex: 1,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'V\nA\nP\nE\nZ\nO\nN\nE',
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'V\nA\nP\nE\nZ\nO\nN\nE',
+                          style: TextStyle(
+                            fontWeight: FontWeight.normal,
+                            fontSize: mediaQuery.height * 0.07,
+                            color: Colors.black87,
+                            fontFamily: GoogleFonts.rubikWetPaint().fontFamily,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    flex: 3,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Lottie.asset('assets/animations/Smoke Anim.json'),
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal:
+                                  MediaQuery.of(context).size.width * 0.10),
+                          child: Text(
+                            'Elevate Your Cloud Game...',
                             style: TextStyle(
-                              fontWeight: FontWeight.normal,
-                              fontSize: 68.rt,
+                              fontSize: mediaQuery.height * 0.05,
                               color: Colors.black87,
+                              fontWeight: FontWeight.normal,
                               fontFamily:
                                   GoogleFonts.rubikWetPaint().fontFamily,
                             ),
+                            textAlign: TextAlign.center, // Centered text
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                    Expanded(
-                      flex: 3,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Lottie.asset('assets/animations/Smoke Anim.json'),
-                          30.verticalSpace,
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal:
-                                    MediaQuery.of(context).size.width * 0.10),
-                            child: Text(
-                              'Elevate Your Cloud Game...',
-                              style: TextStyle(
-                                fontSize: 54.rt,
-                                color: Colors.black87,
-                                fontWeight: FontWeight.normal,
-                                fontFamily:
-                                    GoogleFonts.rubikWetPaint().fontFamily,
-                              ),
-                              textAlign: TextAlign.center, // Centered text
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              16.verticalSpace,
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: MyText(
-                  text: 'Swipe Right To Start Vaping...',
-                  fontSize: 22.rt,
-                  fontWeight: FontWeight.normal,
-                  color: Colors.black87,
-                ),
+            ),
+            SizedBox(
+              height: mediaQuery.height * 0.04,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: MyText(
+                text: 'Swipe Right To Start Vaping...',
+                fontSize: mediaQuery.height * 0.02,
+                fontWeight: FontWeight.normal,
+                color: Colors.black87,
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

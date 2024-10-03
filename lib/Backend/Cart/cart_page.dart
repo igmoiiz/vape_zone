@@ -1,4 +1,3 @@
-import 'package:flexify/flexify.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_shopping_cart/persistent_shopping_cart.dart';
 import 'package:provider/provider.dart';
@@ -18,8 +17,10 @@ class CartPage extends StatefulWidget {
 class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
+    var mediaQuery = MediaQuery.of(context).size;
     final checkoutServices =
         Provider.of<CheckoutServices>(context, listen: false);
+
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
@@ -57,7 +58,7 @@ class _CartPageState extends State<CartPage> {
                                   Text(
                                     'Total:',
                                     style: TextStyle(
-                                      fontSize: 20.rt,
+                                      fontSize: mediaQuery.height * 0.02,
                                       fontWeight: FontWeight.bold,
                                       color: Theme.of(context)
                                           .colorScheme
@@ -67,7 +68,7 @@ class _CartPageState extends State<CartPage> {
                                   Text(
                                     totalAmount.toString(),
                                     style: TextStyle(
-                                      fontSize: 20.rt,
+                                      fontSize: mediaQuery.height * 0.02,
                                       color: Theme.of(context)
                                           .colorScheme
                                           .onPrimary,
@@ -88,8 +89,9 @@ class _CartPageState extends State<CartPage> {
                                 loading: checkoutServices.loading,
                               ),
                               SizedBox(
-                                  height: MediaQuery.of(context).size.height *
-                                      0.01),
+                                height:
+                                    MediaQuery.of(context).size.height * 0.02,
+                              ),
                             ],
                           ),
                         );

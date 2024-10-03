@@ -1,4 +1,3 @@
-import 'package:flexify/flexify.dart';
 import 'package:flutter/material.dart';
 
 class CustomCard extends StatelessWidget {
@@ -15,12 +14,13 @@ class CustomCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var mediaQuery = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.only(top: 6.0, right: 6.0),
       child: GestureDetector(
         onTap: onTap,
         child: Container(
-          height: 200.rh,
+          height: 200,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(4),
             image: DecorationImage(
@@ -47,7 +47,7 @@ class CustomCard extends StatelessWidget {
                     title,
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 16.rt,
+                      fontSize: mediaQuery.height * 0.02,
                       fontWeight: FontWeight.bold,
                     ),
                     textAlign: TextAlign.center,
@@ -61,7 +61,7 @@ class CustomCard extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: Theme.of(context).colorScheme.onPrimary,
                     borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(18),
+                      topLeft: Radius.circular(8),
                     ),
                   ),
                   padding: const EdgeInsets.all(4),

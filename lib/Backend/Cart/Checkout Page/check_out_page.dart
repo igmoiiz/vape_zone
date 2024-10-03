@@ -1,4 +1,3 @@
-import 'package:flexify/flexify.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:vape_zone/Backend/Provider/Services/checkout_services.dart';
@@ -11,6 +10,7 @@ class CheckOutPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var mediaQuery = MediaQuery.of(context).size;
     final checkoutServices =
         Provider.of<CheckoutServices>(context, listen: false);
     return Scaffold(
@@ -28,10 +28,9 @@ class CheckOutPage extends StatelessWidget {
               'I\'m not a coil, but I\'m still into you...',
               style: TextStyle(
                 color: Theme.of(context).colorScheme.onPrimary,
-                fontSize: MediaQuery.of(context).size.height * 0.038.rt,
+                fontSize: mediaQuery.height * 0.04,
               ),
             ),
-            30.verticalSpace,
             Form(
               key: checkoutServices.formKey,
               child: Column(
@@ -60,7 +59,6 @@ class CheckOutPage extends StatelessWidget {
                 ],
               ),
             ),
-            20.verticalSpace,
             MyButton(
               buttontext: 'Place Order',
               onTap: () {
@@ -72,14 +70,16 @@ class CheckOutPage extends StatelessWidget {
               },
               loading: checkoutServices.loading,
             ),
-            10.verticalSpace,
+            SizedBox(
+              height: mediaQuery.height * 0.02,
+            ),
             Align(
               alignment: Alignment.bottomCenter,
               child: Text(
                 'Happy Vaping! Come Back Soon!',
                 style: TextStyle(
-                  color: Theme.of(context).colorScheme.onPrimary,
-                ),
+                    color: Theme.of(context).colorScheme.onPrimary,
+                    fontSize: mediaQuery.height * 0.02),
               ),
             ),
           ],

@@ -1,6 +1,4 @@
 // ignore_for_file: deprecated_member_use
-
-import 'package:flexify/flexify.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_shopping_cart/persistent_shopping_cart.dart';
@@ -56,6 +54,7 @@ class _ShopPageState extends State<ShopPage> {
 
   @override
   Widget build(BuildContext context) {
+    var mediaQuery = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.surface,
@@ -89,7 +88,7 @@ class _ShopPageState extends State<ShopPage> {
           children: [
             MyText(
               text: 'Smooth Clouds, Better Choices.',
-              fontSize: 46.rt,
+              fontSize: mediaQuery.height * 0.04,
               fontWeight: FontWeight.normal,
               color: Theme.of(context).colorScheme.secondary,
             ),
@@ -111,7 +110,7 @@ class _ShopPageState extends State<ShopPage> {
                 alignment: AlignmentDirectional.topStart,
                 child: MyText(
                   text: 'Products',
-                  fontSize: 28.rt,
+                  fontSize: mediaQuery.height * 0.03,
                   fontWeight: FontWeight.normal,
                   color: Theme.of(context).colorScheme.onPrimary,
                 ),

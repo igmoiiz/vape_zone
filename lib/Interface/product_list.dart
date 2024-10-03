@@ -1,6 +1,4 @@
 // ignore_for_file: must_be_immutable, prefer_typing_uninitialized_variables
-
-import 'package:flexify/flexify.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_shopping_cart/model/cart_model.dart';
@@ -24,6 +22,7 @@ class _ProductListPageState extends State<ProductListPage> {
   final TextEditingController searchController = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    var mediaQuery = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -56,12 +55,12 @@ class _ProductListPageState extends State<ProductListPage> {
           children: [
             MyText(
               text: 'Everything You Desire...',
-              fontSize: 46.rt,
+              fontSize: mediaQuery.height * 0.04,
               fontWeight: FontWeight.normal,
               color: Theme.of(context).colorScheme.secondary,
             ),
             //  sized box
-            10.verticalSpace,
+            SizedBox(height: mediaQuery.height * 0.02),
             Padding(
               padding: const EdgeInsets.only(top: 16, right: 12, left: 12),
               child: TextFormField(
@@ -80,6 +79,9 @@ class _ProductListPageState extends State<ProductListPage> {
                 controller: searchController,
                 decoration: InputDecoration(
                   labelText: 'Search Products',
+                  labelStyle: TextStyle(
+                    color: Theme.of(context).colorScheme.onPrimary,
+                  ),
                   filled: true,
                   hintStyle:
                       TextStyle(color: Theme.of(context).colorScheme.onPrimary),
@@ -101,7 +103,7 @@ class _ProductListPageState extends State<ProductListPage> {
               ),
             ),
             //  sized box
-            10.verticalSpace,
+            SizedBox(height: mediaQuery.height * 0.02),
             _displayProduct(),
           ],
         ),
@@ -146,7 +148,7 @@ class _ProductListPageState extends State<ProductListPage> {
                               .toUpperCase()
                               .contains(searchController.text.toUpperCase())) {
                         return Padding(
-                          padding: const EdgeInsets.only(top: 5),
+                          padding: const EdgeInsets.all(8),
                           child: Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(4),
@@ -161,8 +163,8 @@ class _ProductListPageState extends State<ProductListPage> {
                                       NetworkImageWidget(
                                         imageUrl: snapshot.data!.docs[index]
                                             ['imageUrl'],
-                                        height: 100.rh,
-                                        width: 100.rw,
+                                        height: 100,
+                                        width: 100,
                                         borderRadius: 8,
                                       ),
                                       SizedBox(
@@ -184,7 +186,7 @@ class _ProductListPageState extends State<ProductListPage> {
                                                     .surface,
                                                 fontWeight: FontWeight.bold,
                                                 letterSpacing: .5,
-                                                fontSize: 19.rt,
+                                                fontSize: 19,
                                               ),
                                             ),
                                             Text(
@@ -197,7 +199,7 @@ class _ProductListPageState extends State<ProductListPage> {
                                             Text(
                                               'Rs. ${snapshot.data!.docs[index]['price']}',
                                               style: TextStyle(
-                                                fontSize: 17.rt,
+                                                fontSize: 17,
                                                 color: Theme.of(context)
                                                     .colorScheme
                                                     .surface,
@@ -206,8 +208,8 @@ class _ProductListPageState extends State<ProductListPage> {
                                             PersistentShoppingCart()
                                                 .showAndUpdateCartItemWidget(
                                               notInCartWidget: Container(
-                                                height: 30.rh,
-                                                width: 80.rw,
+                                                height: 30,
+                                                width: 80,
                                                 decoration: BoxDecoration(
                                                   borderRadius:
                                                       BorderRadius.circular(20),
@@ -227,8 +229,8 @@ class _ProductListPageState extends State<ProductListPage> {
                                                 ),
                                               ),
                                               inCartWidget: Container(
-                                                height: 30.rh,
-                                                width: 80.rw,
+                                                height: 30,
+                                                width: 80,
                                                 decoration: BoxDecoration(
                                                   borderRadius:
                                                       BorderRadius.circular(20),

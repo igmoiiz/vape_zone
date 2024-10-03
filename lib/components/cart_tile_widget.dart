@@ -1,6 +1,4 @@
 // ignore_for_file: use_build_context_synchronously, deprecated_member_use
-
-import 'package:flexify/flexify.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_shopping_cart/model/cart_model.dart';
 import 'package:persistent_shopping_cart/persistent_shopping_cart.dart';
@@ -15,23 +13,24 @@ class CartTileWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var mediaQuery = MediaQuery.of(context).size;
     return Container(
-      padding: const EdgeInsets.all(10),
-      margin: const EdgeInsets.only(bottom: 10),
+      padding: const EdgeInsets.all(8),
+      margin: const EdgeInsets.only(bottom: 8),
       width: double.infinity,
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.onPrimary.withOpacity(0.9),
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(8),
       ),
       child: Row(
         children: [
           NetworkImageWidget(
-            borderRadius: 10,
-            height: 80.rh,
-            width: 80.rw,
+            borderRadius: 8,
+            height: mediaQuery.height * 0.08,
+            width: mediaQuery.width * 0.16,
             imageUrl: data.productThumbnail ?? '',
           ),
-          10.horizontalSpace,
+          SizedBox(width: mediaQuery.width * 0.02),
           Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -40,7 +39,7 @@ class CartTileWidget extends StatelessWidget {
                 Text(
                   data.productName,
                   style: TextStyle(
-                      fontSize: 14.rt,
+                      fontSize: 14,
                       fontWeight: FontWeight.w700,
                       color: Theme.of(context).colorScheme.surface),
                 ),
@@ -61,7 +60,6 @@ class CartTileWidget extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    20.horizontalSpace,
                     GestureDetector(
                       onTap: () async {
                         bool removed =
@@ -73,20 +71,24 @@ class CartTileWidget extends StatelessWidget {
                           // Handle the case where if product was not found in the cart
                         }
                       },
-                      child: Container(
-                        height: 30.rh,
-                        width: 70.rw,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(
-                              color:
-                                  Theme.of(context).colorScheme.inversePrimary),
-                        ),
-                        child: const Center(
-                          child: Text(
-                            'Remove',
-                            style: TextStyle(
-                              color: Colors.black,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: Container(
+                          height: mediaQuery.height * 0.03,
+                          width: mediaQuery.width * 0.16,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            border: Border.all(
+                                color: Theme.of(context)
+                                    .colorScheme
+                                    .inversePrimary),
+                          ),
+                          child: const Center(
+                            child: Text(
+                              'Remove',
+                              style: TextStyle(
+                                color: Colors.black,
+                              ),
                             ),
                           ),
                         ),
