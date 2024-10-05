@@ -43,7 +43,7 @@ class MyButton extends StatelessWidget {
       child: GestureDetector(
         onTap: onTap,
         child: Container(
-          constraints: BoxConstraints(
+          constraints: const BoxConstraints(
             minWidth: 60,
           ),
           height: mediaQuery.height * 0.07,

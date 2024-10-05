@@ -36,7 +36,8 @@ class CheckoutServices extends ChangeNotifier {
     // Extract cart items and total price
     List<PersistentShoppingCartItem> cartItems = cartData['cartItems'];
     double totalPrice = cartData['totalPrice'];
-
+    //  order id
+    String orderId = DateTime.now().millisecondsSinceEpoch.toString();
     // Send cart items to Firebase Firestore
     for (final cartItem in cartItems) {
       await FirebaseFirestore.instance.collection('Confirm-Orders').add({
@@ -49,6 +50,7 @@ class CheckoutServices extends ChangeNotifier {
         'customerAddress': _customerAddressController.text,
         'customerEmail': _customerEmailController.text,
         'customerPhone': _customerPhoneController.text,
+        'orderId': orderId,
       }).then((value) {
         _loading = false;
         _customerNameController.clear();
